@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>THOR — Recebimento da Entrega</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topo">
+    <div>
+        <h1>THOR</h1>
+        <p>Recebimento da Entrega</p>
+    </div>
+</header>
+
+<main>
+
+    <!-- PAINEL INICIAL -->
+    <section id="painelInicio" class="painel">
+
+        <div class="titulo">
+            <h2>Resumo das Entregas</h2>
+            <p>Confira o andamento das entregas de hoje.</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <span>📦</span>
+                <div>
+                    <strong id="totalDia">0</strong>
+                    <p>Entregas do dia</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <span>✅</span>
+                <div>
+                    <strong id="concluidasDia">0</strong>
+                    <p>Concluídas</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <span>🕐</span>
+                <div>
+                    <strong id="pendentesDia">0</strong>
+                    <p>Pendentes</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="ultimas">
+            <h2>Últimas entregas</h2>
+
+            <div id="listaUltimas">
+                <p class="vazio">Nenhuma entrega registrada hoje.</p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- RECEBIMENTO -->
+    <section id="recebimento" class="recebimento escondido">
+
+        <div class="titulo">
+            <h2>Recebimento da Entrega</h2>
+            <p>Confira os dados e assine para confirmar o recebimento.</p>
+        </div>
+
+        <div id="dadosEntrega" class="dados-entrega">
+
+            <div class="dado">
+                <span>Cliente</span>
+                <strong id="cliente"></strong>
+            </div>
+
+            <div class="dado">
+                <span>Código</span>
+                <strong id="codigo"></strong>
+            </div>
+
+            <div class="dado">
+                <span>Notas fiscais</span>
+                <strong id="notas"></strong>
+            </div>
+
+            <div class="dado observacao-box">
+                <span>Observação</span>
+                <strong id="observacao"></strong>
+            </div>
+
+        </div>
+
+
+        <div class="formulario">
+
+            <label for="nome">
+                Nome de quem recebeu
+            </label>
+
+            <input
+                type="text"
+                id="nome"
+                placeholder="Digite o nome"
+                autocomplete="name"
+            >
+
+
+            <label for="documento">
+                CPF / Documento
+            </label>
+
+            <input
+                type="text"
+                id="documento"
+                placeholder="Digite o CPF ou documento"
+                inputmode="numeric"
+            >
+
+
+            <label>
+                Assinatura
+            </label>
+
+            <div class="area-assinatura">
+
+                <canvas id="canvasAssinatura"></canvas>
+
+                <span class="texto-assinatura">
+                    Assine aqui com o dedo ou mouse
+                </span>
+
+            </div>
+
+            <button
+                type="button"
+                class="btn-limpar"
+                id="btnLimpar"
+            >
+                🗑️ Limpar assinatura
+            </button>
+
+
+            <button
+                type="button"
+                class="btn-confirmar"
+                id="btnConfirmar"
+            >
+                ✅ Confirmar Recebimento
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONFIRMAÇÃO -->
+    <section id="sucesso" class="sucesso escondido">
+
+        <div class="icone-sucesso">
+            ✅
+        </div>
+
+        <h2>Entrega confirmada!</h2>
+
+        <p>
+            A assinatura foi registrada com sucesso.
+        </p>
+
+        <div class="confirmacao-info">
+
+            <p>
+                <strong>Cliente:</strong>
+                <span id="sucessoCliente"></span>
+            </p>
+
+            <p>
+                <strong>Recebedor:</strong>
+                <span id="sucessoNome"></span>
+            </p>
+
+            <p>
+                <strong>Código:</strong>
+                <span id="sucessoCodigo"></span>
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <p>THOR Distribuidora de Alimentos</p>
+    <p>MM Sistemas e Tecnologia — Todos os direitos reservados.</p>
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
